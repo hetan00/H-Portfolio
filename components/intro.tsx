@@ -41,6 +41,17 @@ export default function intro() {
                 </motion.span>
             </div>
         </div>
+
+        <p className="mb-10 mt-4 
+        px-4 text-2xl 
+        font-medium !leading-[1.5]
+        sm:text-4xl">
+        <span className="font-bold">Hello, I'm Hetan.</span> I'm a Computer Science Graduate and I specialise in{" "}
+        <span className="font-bold">full-stack development</span>. {" "}
+        I enjoy
+        building <span className="italic">sites and applications</span>. My focus is{" "}
+        <span className="underline">React (Next.js)</span> {"and"} <span className="underline">Python</span>.
+        </p>
     </section>
   )
 }
