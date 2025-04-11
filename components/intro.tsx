@@ -11,7 +11,7 @@ import { FaGithubSquare } from "react-icons/fa"
 
 export default function intro() {
   return (
-    <section className="mb-28 max-w-[50rem] text-center sm:mb-0">
+    <section id="home" className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-100">
         <div className="flex item-center justify-center">
             <div className="relative">
                 <motion.div
@@ -47,7 +47,7 @@ export default function intro() {
             </div>
         </div>
 
-        <motion.p className="mb-10 mt-4 
+        <motion.h1 className="mb-10 mt-4 
         px-4 text-2xl 
         font-medium !leading-[1.5]
         sm:text-4xl"
@@ -59,7 +59,7 @@ export default function intro() {
         I enjoy
         building <span className="italic">sites and applications</span>. My focus is{" "}
         <span className="underline">React (Next.js)</span> {"and"} <span className="underline">Python</span>.
-        </motion.p>
+        </motion.h1>
 
         <motion.div className="flex flex-col sm:flex-row 
         items-center justify-center gap-2 px-4 text-lg font-medium"
@@ -86,7 +86,7 @@ export default function intro() {
             flex 
             items-center gap-2 rounded-full outline-none
             focus:scale-110 hover:scale-110 active:scale-105
-            transition cursor-pointer border border-black/10" href="/CV.pdf" download>Download CV <HiDownload className="opacity-60 group-hover:translate-y-1
+            transition cursor-pointer border border-black/10" href="/Hetan's CV.pdf" download>Download CV <HiDownload className="opacity-60 group-hover:translate-y-1
             transition"/> 
             </a>
             <a className="bg-white 
