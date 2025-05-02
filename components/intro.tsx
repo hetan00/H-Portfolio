@@ -7,11 +7,24 @@ import Link from "next/link"
 import { BsArrowRight, BsLinkedin } from "react-icons/bs"
 import { HiDownload } from "react-icons/hi"
 import { FaGithubSquare } from "react-icons/fa"
+import { useSectionInView } from "@/lib/hooks"
+import { useActiveSectionContext } from "@/context/active-section-context"
 
 
 export default function intro() {
+
+   const {ref} = useSectionInView("Home", 0.5)
+   const {setActiveSection, setTimeOfLastClick} = useActiveSectionContext()
+    
+    // function setActiveSection(arg0: string) {
+    //     throw new Error("Function not implemented.")
+    // }
+
   return (
-    <section id="home" className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-100">
+    <section 
+        ref={ref}
+        id="home" 
+        className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-100">
         <div className="flex item-center justify-center">
             <div className="relative">
                 <motion.div
@@ -76,8 +89,12 @@ export default function intro() {
             flex 
             items-center gap-2 rounded-full outline-none
             focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105
-            transition">
-                Contact me here 
+            transition"
+            onClick={() =>{
+                setActiveSection("Contact")
+                setTimeOfLastClick(Date.now())
+            }}>
+                Contact me here{" "}
                 <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition"/> 
             </Link>
             <a className="group bg-white 
@@ -86,7 +103,7 @@ export default function intro() {
             flex 
             items-center gap-2 rounded-full outline-none
             focus:scale-110 hover:scale-110 active:scale-105
-            transition cursor-pointer border border-black/10" href="/Hetan's CV.pdf" download>Download CV <HiDownload className="opacity-60 group-hover:translate-y-1
+            transition cursor-pointer borderBlack" /* href="https://docs.google.com/document/d/1xC9tNYScq36aXhb2SGO7qobQaAw_HX-XmtL0XrO8h34/edit?usp=sharing" */ href="/Hetan's CV.pdf"  download>Download CV <HiDownload className="opacity-60 group-hover:translate-y-1
             transition"/> 
             </a>
             <a className="bg-white 
@@ -94,7 +111,7 @@ export default function intro() {
             text-gray-700 
             flex 
             items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105
-            transition cursor-pointer border border-black/10"
+            transition cursor-pointer borderBlack"
             href="https://linkedin.com" target="_blank" >
                 <BsLinkedin/>
             </a>
@@ -103,7 +120,7 @@ export default function intro() {
             text-gray-700 
             flex 
             items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105
-            transition cursor-pointer border border-black/10"
+            transition cursor-pointer borderBlack"
             href="https://github.com/hetan00" target="_blank">
                 <FaGithubSquare />
             </a>
